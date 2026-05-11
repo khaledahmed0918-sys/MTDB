@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-mt-primary: var(--mt-theme-color);
+  --color-mt-primary-dark: var(--mt-theme-color-dark);
+  --color-mt-bg: #000000;
+  --color-mt-surface: #121212;
+  --color-mt-surface-hover: #1f1f1f;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  /* Global Theme Color Variable */
+  --mt-theme-color: #F3CE13; /* IMDb Yellow */
+  --mt-theme-color-dark: #cc9c00;
+}
+
+@layer base {
+  body {
+    @apply bg-mt-bg text-[#FFFFFF] font-sans antialiased overflow-x-hidden selection:bg-mt-primary selection:text-black;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-mt-primary to-mt-primary-dark;
+  }
+  .glass-effect {
+    @apply bg-mt-surface/60 backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
+  
+  /* Mobile padding and optimization classes */
+  .mobile-container {
+    @apply w-full max-w-[1600px] mx-auto px-3 sm:px-6 md:px-8;
+  }
+  
+  .mobile-touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Enforce better spacing on very small screens to prevent overflow */
+  html, body {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

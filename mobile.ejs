@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MTDb Mobile - Home of Scenarios</title>
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #000; color: white; margin: 0; overflow-x: hidden; }
+        .topbar { display: flex; align-items: center; padding: 12px 16px; background-color: #000; border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 100; }
+        .hamburger { font-size: 24px; color: white; background: none; border: none; padding: 8px; cursor: pointer; }
+        .logo { background-color: #f5c518; color: black; font-weight: 900; padding: 4px 10px; border-radius: 4px; font-size: 18px; text-transform: uppercase; margin-right: 12px; }
+        .search-icon { margin-left: auto; color: white; font-size: 20px; padding: 8px; }
+        .use-app { background-color: #f5c518; color: black; font-weight: 900; padding: 6px 16px; border-radius: 20px; font-size: 13px; text-transform: uppercase; border: none; margin-right: 8px; }
+        
+        .hero { position: relative; width: 100%; aspect-ratio: 4/5; background-color: #0c0b00; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
+        .hero-img { position: absolute; inset: 0; width: 100%; h-full; object-fit: cover; opacity: 0.6; }
+        .hero-gradient { background: linear-gradient(to top, #000, transparent); position: absolute; inset: 0; }
+        .hero-content { position: relative; z-index: 10; display: flex; align-items: flex-end; gap: 16px; }
+        .hero-poster { width: 90px; aspect-ratio: 2/3; border: 1px solid rgba(255,255,255,0.2); border-radius: 2px; flex-shrink: 0; background-color: #222; position: relative; }
+        .hero-bookmark { position: absolute; top: 0; right: 0; background: rgba(0,0,0,0.6); color: white; padding: 4px; font-size: 18px; }
+        .hero-text h1 { font-size: 1.75rem; font-weight: 900; margin: 0; line-height: 1.1; margin-bottom: 4px; }
+        .hero-text p { font-size: 0.875rem; color: #888; margin: 0; margin-bottom: 12px; }
+        .hero-play-btn { width: 60px; height: 60px; border-radius: 50%; border: 2px solid white; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); margin-right: 12px; }
+        
+        .category-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 16px; scrollbar-width: none; }
+        .pill { border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 8px 16px; font-weight: bold; white-space: nowrap; font-size: 14px; }
+        
+        .section-header { padding: 16px; display: flex; flex-direction: column; }
+        .section-header .title-wrap { display: flex; align-items: center; gap: 10px; }
+        .section-header .bar { width: 4px; height: 24px; background-color: #f5c518; }
+        .section-header h2 { margin: 0; font-size: 20px; font-weight: 900; color: white; }
+        .section-header p { margin: 4px 0 0 14px; font-size: 10px; font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+        .featured-scroll { display: flex; gap: 16px; overflow-x: auto; padding: 0 16px 20px; }
+        .featured-card { width: 280px; flex-shrink: 0; background-color: #121212; border-radius: 8px; overflow: hidden; }
+        .featured-img { width: 100%; aspect-ratio: 16/9; background-color: #222; }
+        .featured-body { padding: 12px; }
+        .featured-body h3 { margin: 0; font-size: 16px; margin-bottom: 4px; }
+        .featured-body a { color: #1c7ced; font-weight: bold; font-size: 13px; text-decoration: none; }
+
+        .list-section { padding: 0 16px; display: flex; flex-direction: column; gap: 12px; }
+        .top10-card { display: flex; background: #1a1a1a; border-radius: 4px; overflow: hidden; }
+        .top10-poster { width: 80px; aspect-ratio: 2/3; background: #333; flex-shrink: 0; }
+        .top10-info { padding: 12px; flex-grow: 1; }
+        .top10-title { font-weight: bold; font-size: 15px; margin-bottom: 4px; }
+        .top10-meta { color: #888; font-size: 12px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <button class="hamburger">☰</button>
+        <div class="logo">MTDb</div>
+        <div class="search-icon">🔍</div>
+        <button class="use-app">استخدم التطبيق</button>
+    </div>
+
+    <div class="hero">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-poster">
+                <div class="hero-bookmark">+</div>
+            </div>
+            <div class="hero-text">
+                <h1>قصص المافيا والعصابات</h1>
+                <p>شاهد العرض التشويقي</p>
+                <div style="display: flex; align-items: center;">
+                    <div class="hero-play-btn">▶</div>
+                    <span style="font-weight: 900;">2:30</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-scroll">
+        <div class="pill">جوائز BAFTA ></div>
+        <div class="pill">يوم حرب النجوم ></div>
+        <div class="pill">مهرجان كان ></div>
+    </div>
+
+    <div class="section-header">
+        <div class="title-wrap">
+            <div class="bar"></div>
+            <h2>مميز اليوم</h2>
+        </div>
+    </div>
+
+    <div class="featured-scroll">
+        <div class="featured-card">
+            <div class="featured-img"></div>
+            <div class="featured-body">
+                <div style="font-size: 10px; color: #888; margin-bottom: 4px;">قائمة</div>
+                <h3>دليل مشاهدة الصيف</h3>
+                <a href="#">تصفح الدليل</a>
+            </div>
+        </div>
+        <div class="featured-card">
+            <div class="featured-img"></div>
+            <div class="featured-body">
+                <div style="font-size: 10px; color: #888; margin-bottom: 4px;">قائمة</div>
+                <h3>أفضل 25 سيناريو</h3>
+                <a href="#">عرض الترتيب</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <div class="title-wrap">
+            <div class="bar"></div>
+            <h2>أفضل 10 هذا الأسبوع</h2>
+        </div>
+    </div>
+
+    <div class="list-section">
+        <div class="top10-card">
+            <div class="top10-poster"></div>
+            <div class="top10-info">
+                <div class="top10-title">سرقة لاس فيغاس الكبرى</div>
+                <div class="top10-meta">2024 • 2س 30د • أكشن</div>
+                <div style="color: #f5c518; font-weight: bold; font-size: 14px;">★ 8.9 <span style="color: #555; font-size: 10px;">(20K)</span></div>
+            </div>
+        </div>
+        <div class="top10-card">
+            <div class="top10-poster"></div>
+            <div class="top10-info">
+                <div class="top10-title">مدينة الضياع: العودة</div>
+                <div class="top10-meta">2024 • 1س 45د • دراما</div>
+                <div style="color: #f5c518; font-weight: bold; font-size: 14px;">★ 8.2 <span style="color: #555; font-size: 10px;">(15K)</span></div>
+            </div>
+        </div>
+        <button style="width: 100%; padding: 12px; background: #121212; border: 1px solid #333; color: #1c7ced; font-weight: 900; border-radius: 20px; margin-top: 10px;">عرض الكل</button>
+    </div>
+
+    <div style="height: 100px;"></div>
+</body>
+</html>

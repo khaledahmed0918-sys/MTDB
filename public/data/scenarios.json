@@ -1,0 +1,83 @@
+[
+  {
+    "id": "killer-x-abdulsamad",
+    "title": "KILLER X ABDULSAMAD",
+    "description": "An intense rivalry that started in the dark alleys of the underworld reaches its boiling point. Killer has a hit contract, but Abdulsamad won't go down without a bloody fight.",
+    "mainPosterUrl": "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=1920&auto=format&fit=crop",
+    "overallRating": 4.8,
+    "totalVotes": 1250,
+    "tags": ["Action", "Thriller", "Crime"],
+    "director": "Marco Rossi",
+    "releaseDate": "2024-05-10",
+    "episodes": [],
+    "cast": [
+      { "id": "char-k1", "playerName": "Jason Statham", "characterName": "Killer", "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00d999a5173c?q=80&w=300&auto=format&fit=crop" },
+      { "id": "char-k2", "playerName": "Idris Elba", "characterName": "Abdulsamad", "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&auto=format&fit=crop" },
+      { "id": "char-k3", "playerName": "Tom Hardy", "characterName": "The Vulture", "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "baker-x-abdulsamad",
+    "title": "BAKER X ABDULSAMAD",
+    "description": "It was supposed to be a simple transaction. But when Baker decided to change the terms with a loaded gun, Abdulsamad realized the bakery was just a front for something much more sinister.",
+    "mainPosterUrl": "https://images.unsplash.com/photo-1555848962-6e79363ec58f?q=80&w=1920&auto=format&fit=crop",
+    "overallRating": 4.5,
+    "totalVotes": 850,
+    "tags": ["Mystery", "Crime", "Drama"],
+    "director": "Sofia Coppola",
+    "releaseDate": "2024-05-11",
+    "episodes": [],
+    "cast": [
+      { "id": "char-b1", "playerName": "Bryan Cranston", "characterName": "Baker", "avatarUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a63c5?q=80&w=300&auto=format&fit=crop" },
+      { "id": "char-b2", "playerName": "Abdulsamad Ali", "characterName": "The Negotiator", "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "bigboss-x-alpha",
+    "title": "BIGBOSS X ALPHA",
+    "description": "A clash of titans. Bigboss commands the largest syndicate in the city, but Alpha is an unstoppable force of nature tearing through his ranks one by one. Who will claim the throne?",
+    "mainPosterUrl": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1920&auto=format&fit=crop",
+    "overallRating": 4.9,
+    "totalVotes": 2100,
+    "tags": ["Action", "War", "Political"],
+    "director": "Christopher Nolan",
+    "releaseDate": "2024-05-12",
+    "episodes": [],
+    "cast": [
+      { "id": "char-bb1", "playerName": "Mads Mikkelsen", "characterName": "BigBoss", "avatarUrl": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=300&auto=format&fit=crop" },
+      { "id": "char-bb2", "playerName": "Keanu Reeves", "characterName": "Alpha", "avatarUrl": "https://images.unsplash.com/photo-1542103749-8ef59b94f47e?q=80&w=300&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "mrt-x-abdulsamad",
+    "title": "MR.T X ABDULSAMAD",
+    "description": "Mr. T has completely cut off the supply lines. Left with no choice, Abdulsamad organizes a high-stakes heist to retrieve what rightfully belongs to him. A relentless pursuit follows.",
+    "mainPosterUrl": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c848?q=80&w=1920&auto=format&fit=crop",
+    "overallRating": 4.3,
+    "totalVotes": 720,
+    "tags": ["Heist", "Action", "Survival"],
+    "director": "Guy Ritchie",
+    "releaseDate": "2024-05-13",
+    "episodes": [],
+    "cast": [
+      { "id": "char-mt1", "playerName": "Mr. T", "characterName": "The Supplier", "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" },
+      { "id": "char-mt2", "playerName": "Abdulsamad Ali", "characterName": "The Heist Master", "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop" }
+    ]
+  },
+  {
+    "id": "vandam-x-abdulsamad",
+    "title": "VANDAM X ABDULSAMAD",
+    "description": "The final showdown. Vandam's martial arts supremacy against Abdulsamad's unparalleled tactical brilliance. No rules, no referees, just pure combat until only one stands.",
+    "mainPosterUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1920&auto=format&fit=crop",
+    "overallRating": 5.0,
+    "totalVotes": 3400,
+    "tags": ["Action", "Thriller", "Combat"],
+    "director": "Gareth Evans",
+    "releaseDate": "2024-05-14",
+    "episodes": [],
+    "cast": [
+      { "id": "char-v1", "playerName": "Jean-Claude Van Damme", "characterName": "Vandam", "avatarUrl": "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=300&auto=format&fit=crop" },
+      { "id": "char-v2", "playerName": "Abdulsamad Ali", "characterName": "The Tactician", "avatarUrl": "https://images.unsplash.com/photo-1542206395-9feb3edaa68d?q=80&w=300&auto=format&fit=crop" }
+    ]
+  }
+]
