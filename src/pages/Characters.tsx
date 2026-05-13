@@ -59,9 +59,8 @@ export function Characters() {
             <div 
               key={`${c.id}-${idx}`} 
               onClick={() => {
-                if (c.playerName) {
-                  setSearchQuery(c.playerName);
-                  navigate("/");
+                if (c.id) {
+                  navigate(`/character/${c.id}`);
                 }
               }}
               className="bg-transparent rounded-sm overflow-hidden hover:bg-white/5 transition-all border border-transparent hover:border-white/10 flex flex-col items-center p-4 text-center group cursor-pointer"

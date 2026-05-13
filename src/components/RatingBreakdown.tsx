@@ -20,7 +20,9 @@ export function RatingBreakdown({ scenarioId, totalVotes, breakdownData }: Ratin
             // Fallback: If not passed, fetch it, but this should be rare now
             const fetchBreakdown = async () => {
                 try {
-                    const response = await fetch(`https://dolabriform-fascinatedly-lecia.ngrok-free.dev/api/ratings/${scenarioId}`);
+                    const response = await fetch(`https://dolabriform-fascinatedly-lecia.ngrok-free.dev/api/ratings/${scenarioId}`, {
+                        headers: { 'ngrok-skip-browser-warning': 'true' }
+                    });
                     const data = await response.json();
                     setBreakdown(data.ratingsBreakdown);
                 } catch (err) {

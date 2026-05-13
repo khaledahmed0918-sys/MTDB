@@ -277,9 +277,8 @@ export function ScenarioDetails() {
                   >
                     <div 
                       onClick={() => {
-                        if (c.playerName) {
-                          setSearchQuery(c.playerName);
-                          navigate("/");
+                        if (c.id) {
+                          navigate(`/character/${c.id}`);
                         }
                       }}
                       className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-mt-primary transition-all bg-[#111] shadow-xl cursor-pointer mb-3"
@@ -293,9 +292,8 @@ export function ScenarioDetails() {
                     <div className="min-w-0 w-full">
                       <div 
                         onClick={() => {
-                          if (c.playerName) {
-                            setSearchQuery(c.playerName);
-                            navigate("/");
+                          if (c.id) {
+                            navigate(`/character/${c.id}`);
                           }
                         }}
                         className="text-sm md:text-base font-black text-white truncate group-hover:text-mt-primary transition-colors cursor-pointer"
@@ -391,7 +389,7 @@ export function ScenarioDetails() {
               </div>
 
               <div key={refreshKey} className="pt-4 border-t border-white/5">
-                <RatingBreakdown scenarioId={id || ''} totalVotes={ratingData?.votesCount || scenario.votesCount || 0} breakdownData={ratingData?.ratingsBreakdown} />
+                <RatingBreakdown scenarioId={id || ''} totalVotes={ratingData?.votesCount || scenario.totalVotes || 0} breakdownData={ratingData?.ratingsBreakdown} />
               </div>
             </div>
           </div>

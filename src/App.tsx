@@ -17,6 +17,7 @@ import { TopRated } from "./pages/TopRated";
 import { Trending } from "./pages/Trending";
 import { Episodes } from "./pages/Episodes";
 import { Characters } from "./pages/Characters";
+import { CharacterDetails } from "./pages/CharacterDetails";
 import { Watchlist } from "./pages/Watchlist";
 import { Edits } from "./pages/Edits";
 import { Scenarios } from "./pages/Scenarios";
@@ -39,6 +40,7 @@ export default function App() {
               <Route path="/trending" element={<Trending />} />
               <Route path="/episodes" element={<Episodes />} />
               <Route path="/characters" element={<Characters />} />
+              <Route path="/character/:id" element={<CharacterDetails />} />
               <Route path="/watchlist" element={<Watchlist />} />
               <Route path="/edits" element={<Edits />} />
               <Route path="/scenarios" element={<Scenarios />} />

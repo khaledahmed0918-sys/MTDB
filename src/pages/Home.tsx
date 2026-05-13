@@ -84,7 +84,7 @@ function TopCharacters() {
       <SectionHeader title={t('topCharacters')} />
       <div className="flex gap-6 overflow-x-auto no-scrollbar pb-4 px-2">
         {topChars.map((char, idx) => (
-          <div key={char.id} className="flex flex-col items-center gap-3 shrink-0 w-32 group">
+          <Link to={`/character/${char.id}`} key={char.id} className="flex flex-col items-center gap-3 shrink-0 w-32 group cursor-pointer active:scale-95 transition-transform">
             <div className="relative">
               <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-[#f5c518] transition-all bg-[#111] shadow-xl">
                 <ProgressiveImage src={char.avatarUrl} alt={char.playerName} className="w-full h-full object-cover" />
@@ -101,7 +101,7 @@ function TopCharacters() {
                 <span className="text-[10px] font-black">{char.likes}</span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
@@ -220,7 +220,7 @@ function Top10Card({ scenario, rank }: Top10CardProps) {
   const { t, dir, language } = useI18n();
   const { watchlist, toggleWatchlist } = useScenarios();
   const isWatchlisted = watchlist.includes(scenario.id);
-  const voteCount = useMemo(() => Math.floor((scenario.overallRating || 1) * 12345), [scenario.id]);
+  const voteCount = useMemo(() => scenario.totalVotes || 0, [scenario.totalVotes]);
 
   return (
     <div className="flex gap-3 bg-[#121212] rounded-xl overflow-hidden border border-white/5 shadow-2xl group hover:bg-[#1a1a1a] transition-all hover:shadow-[#f5c518]/5">
@@ -249,7 +249,7 @@ function Top10Card({ scenario, rank }: Top10CardProps) {
           <div className="flex items-center gap-1.5">
             <Star className="w-3.5 h-3.5 text-[#f5c518] fill-[#f5c518]" />
             <span className="text-white text-sm font-bold">{scenario.overallRating?.toFixed(1) || '0.0'}</span>
-            <span className="text-[#555] text-[10px]">({(voteCount / 1000).toFixed(0)}K)</span>
+            <span className="text-[#555] text-[10px]">({voteCount.toLocaleString()})</span>
           </div>
           <button className="flex items-center gap-1 text-[#1c7ced] font-bold text-xs hover:bg-[#1c7ced]/10 px-2.5 py-1 rounded-md transition-colors uppercase tracking-tight bg-white/5">
             <Star className="w-3.5 h-3.5" />
@@ -343,12 +343,14 @@ export function Home() {
       try {
         await Promise.all(trailerScenarios.map(async (scenario) => {
           try {
-            const response = await fetch(`https://dolabriform-fascinatedly-lecia.ngrok-free.dev/api/ratings/${scenario.id}`);
+            const response = await fetch(`https://dolabriform-fascinatedly-lecia.ngrok-free.dev/api/ratings/${scenario.id}`, {
+              headers: { 'ngrok-skip-browser-warning': 'true' }
+            });
             const data = await response.json();
-            counts[scenario.id] = data.totalRatings || 0;
+            counts[scenario.id] = data.votesCount || 0;
           } catch (e) {
-            // Fallback to simulated if API fails
-            counts[scenario.id] = Math.floor((scenario.overallRating || 0) * 1542);
+            // Fallback to 0 if API fails
+            counts[scenario.id] = 0;
           }
         }));
         setRatingCounts(counts);
@@ -576,7 +578,7 @@ export function Home() {
            </div>
            <div className="flex gap-4 md:gap-8 overflow-x-auto no-scrollbar px-3 pb-6">
              {celebrities.map((celeb, idx) => (
-                <div key={celeb.id} className="flex flex-col items-center gap-3 shrink-0 w-28 group">
+                <Link to={`/character/${celeb.id}`} key={celeb.id} className="flex flex-col items-center gap-3 shrink-0 w-28 group cursor-pointer active:scale-95 transition-transform">
                   <div className="relative w-24 h-24 md:w-28 md:h-28">
                     <div className="w-full h-full rounded-full overflow-hidden border-2 border-white/10 group-hover:border-[#f5c518] transition-all bg-[#222] shadow-xl">
                       <div className="w-full h-full flex items-center justify-center text-4xl font-black text-white/10 uppercase">
@@ -589,16 +591,9 @@ export function Home() {
                     </div>
                   </div>
                   <div className="flex flex-col items-center text-center">
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                       <span className="text-[#888] text-xs font-bold">{idx + 1}</span>
-                       <div className="flex items-center text-green-500">
-                          <ChevronUp className="w-3 h-3 fill-current" />
-                          <span className="text-[10px] font-black">(2,405)</span>
-                       </div>
-                    </div>
                     <h4 className="text-white font-bold text-sm group-hover:text-[#f5c518] transition-colors line-clamp-2">{celeb.playerName}</h4>
                   </div>
-                </div>
+                </Link>
              ))}
            </div>
          </section>
